@@ -9,19 +9,19 @@ namespace BussRoute
     //Class that holds on the methods to Connect nodes to each other
     public class RouteConnector
     {
-        private Random randomConnectRouts;
+        private Random randomConnectRoutes;
         private Random randomAmountsOfConnections;
         public List<Node> Nodes { get; private set; }
         public RouteConnector()
         {
             Nodes = new List<Node>();
-            randomConnectRouts = new Random();
+            randomConnectRoutes = new Random();
             randomAmountsOfConnections = new Random();
             CreateListNodes();
         }
 
         /*Metod to call if you wanna generate nodes and thier different connections , time O(n)*/
-        public void ConnectRouts()
+        public void ConnectRoutes()
         {
             //Adds one connection to each node. I some case after this one node will have more connections
             for (int i = 0; i < Nodes.Count; i++)
@@ -61,7 +61,7 @@ namespace BussRoute
             a node is found*/
             while (countBreakLoop != 100000)
             {
-                nodetoConnect = Nodes[randomConnectRouts.Next(0, Nodes.Count)];
+                nodetoConnect = Nodes[randomConnectRoutes.Next(0, Nodes.Count)];
 
                 if (inputNode.Name != nodetoConnect.Name && nodetoConnect.Connections.Count < 3)
                 {

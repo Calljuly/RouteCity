@@ -13,7 +13,7 @@ namespace ConsoleApp
         public static RouteCalculator roadSearch = null;
         static void Main(string[] args)
         {
-            connector.ConnectRouts();
+            connector.ConnectRoutes();
             roadSearch = new RouteCalculator(connector.Nodes);
             Console.WriteLine("Hello and welcome to RoutCity!");
             Console.WriteLine("Here you can find the fastest way too you choosen part of the city.");

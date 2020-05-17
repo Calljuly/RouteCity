@@ -19,7 +19,7 @@ namespace NUnitTestProject
             {
                 RouteConnector a = new RouteConnector();
 
-                a.ConnectRouts();
+                a.ConnectRoutes();
                 for (int x = 0; x < a.Nodes.Count; x++)
                 {
                     if (a.Nodes[x].Connections.Count == 1)
@@ -41,7 +41,7 @@ namespace NUnitTestProject
             for (int i = 0; i < 10000000; i++)
             {
                 RouteConnector a = new RouteConnector();
-                a.ConnectRouts();
+                a.ConnectRoutes();
                 RouteCalculator b = new RouteCalculator(a.Nodes);
                 int s = one.Next(0, a.Nodes.Count);
                 int u = two.Next(0, a.Nodes.Count);
@@ -112,7 +112,7 @@ namespace NUnitTestProject
         public void TestThatANodeHasAConnection()
         {
             testConnector = new RouteConnector();
-            testConnector.ConnectRouts();
+            testConnector.ConnectRoutes();
 
             for (int i = 0; i < testConnector.Nodes.Count; i++)
             {
@@ -137,7 +137,7 @@ namespace NUnitTestProject
         public void TestThatEachNodeHasTwoToThreeConnections()
         {
             testConnector = new RouteConnector();
-            testConnector.ConnectRouts();
+            testConnector.ConnectRoutes();
 
             for (int i = 0; i < testConnector.Nodes.Count; i++)
             {
@@ -152,7 +152,7 @@ namespace NUnitTestProject
         public void TestIfANodeHasConnectionToItself()
         {
             testConnector = new RouteConnector();
-            testConnector.ConnectRouts();
+            testConnector.ConnectRoutes();
 
             for (int i = 0; i < testConnector.Nodes.Count; i++)
             {
@@ -221,7 +221,7 @@ namespace NUnitTestProject
         public void TestRouteConnectorAnNodeConnectionsWithCalculateRoute()
         {
             testConnector = new RouteConnector();
-            testConnector.ConnectRouts();
+            testConnector.ConnectRoutes();
             calculator = new RouteCalculator(testConnector.Nodes);
             testVertex = calculator.FindShortestPath(testConnector.Nodes[0], testConnector.Nodes[1], 0 );
             
